@@ -1,33 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CarrosCoppel
 {
-    public partial class Carros : Form
+   
+
+    internal class carros
     {
-        public Carros()
+        string carId;
+        string carMod;
+        string carAño;
+        string carMarcaID;
+        string tipID;
+        string carColorId;
+        public carros(string carId, string carMod, string carAño, string carMarcaID, string tipID, string carColorId)
         {
-            InitializeComponent();
+            this.carId = carId;
+            this.carMod = carMod;
+            this.carAño = carAño;
+            this.carMarcaID = carMarcaID;
+            this.tipID = tipID;
+            this.carColorId = carColorId;
+        } 
+        public string CarId
+        {
+            get => carId; set => carId = value;
+        }
+        public string CarMod
+        {
+            get => carMod; set => carMod = value;
+        }
+        public string Caraño
+        {
+            get => carAño; set => carAño = value;
+        }
+        public string CarMarcaID
+        {
+            get => carMarcaID; set => carMarcaID = value;
+        }
+        public string TipID
+        {
+            get => tipID; set => tipID = value;
+        }
+        public string CarColorId
+        {
+            get => carColorId; set => carColorId = value;
         }
 
-        private void Carros_Load(object sender, EventArgs e)
-        {
-            DataTable data = ManejaCarros.obtenCarro();
-            this.dataGridView1.DataSource = data;
-            this.dataGridView1.Columns.GetLastColumn(DataGridViewElementStates.None, DataGridViewElementStates.None).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridView1.AutoResizeRows();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

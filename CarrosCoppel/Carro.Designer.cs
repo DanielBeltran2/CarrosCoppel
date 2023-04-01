@@ -1,6 +1,6 @@
 ﻿namespace CarrosCoppel
 {
-    partial class Carros
+    partial class Carro
     {
         /// <summary>
         /// Required designer variable.

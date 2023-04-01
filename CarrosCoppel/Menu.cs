@@ -47,7 +47,7 @@ namespace CarrosCoppel
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Carros VerCar = new Carros();
+            Carro VerCar = new Carro();
             VerCar.Show();
         }
     }

@@ -56,6 +56,8 @@
             this.txtIdCar.Name = "txtIdCar";
             this.txtIdCar.Size = new System.Drawing.Size(121, 23);
             this.txtIdCar.TabIndex = 0;
+            this.txtIdCar.TextChanged += new System.EventHandler(this.txtIdCar_TextChanged);
+            this.txtIdCar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdCar_KeyPress);
             // 
             // txtModCar
             // 
@@ -70,6 +72,7 @@
             this.txtAñoCar.Name = "txtAñoCar";
             this.txtAñoCar.Size = new System.Drawing.Size(121, 23);
             this.txtAñoCar.TabIndex = 3;
+            this.txtAñoCar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAñoCar_KeyPress);
             // 
             // label1
             // 
@@ -157,6 +160,7 @@
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnLimpiar
             // 
@@ -166,6 +170,7 @@
             this.btnLimpiar.TabIndex = 16;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // rbMod
             // 
@@ -176,6 +181,7 @@
             this.rbMod.TabIndex = 17;
             this.rbMod.Text = "Modificar";
             this.rbMod.UseVisualStyleBackColor = true;
+            this.rbMod.CheckedChanged += new System.EventHandler(this.rbMod_CheckedChanged);
             // 
             // rbNuevo
             // 
@@ -188,6 +194,7 @@
             this.rbNuevo.TabStop = true;
             this.rbNuevo.Text = "Nuevo";
             this.rbNuevo.UseVisualStyleBackColor = true;
+            this.rbNuevo.CheckedChanged += new System.EventHandler(this.rbNuevo_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -207,6 +214,7 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(812, 244);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // AgregarCarros
             // 
@@ -231,6 +239,7 @@
             this.Controls.Add(this.txtIdCar);
             this.Name = "AgregarCarros";
             this.Text = "AgregarCarros";
+            this.Load += new System.EventHandler(this.AgregarCarros_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
