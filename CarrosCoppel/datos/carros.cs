@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarrosCoppel
+namespace CarrosCoppel.datos
 {
-   
+
 
     internal class carros
     {
@@ -24,7 +24,7 @@ namespace CarrosCoppel
             this.carMarcaID = carMarcaID;
             this.tipID = tipID;
             this.carColorId = carColorId;
-        } 
+        }
         public string CarId
         {
             get => carId; set => carId = value;

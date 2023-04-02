@@ -1,7 +1,9 @@
-﻿using System.Data;
+﻿using CarrosCoppel.conexion;
+using CarrosCoppel.datos;
+using System.Data;
 using System.Data.SqlClient;
 
-namespace CarrosCoppel
+namespace CarrosCoppel.controlador
 {
     internal class ManejaCarros
     {
@@ -42,7 +44,7 @@ namespace CarrosCoppel
             try
             {
                 conn = Conectar.CrearConexion();
-                conn.Open();                
+                conn.Open();
                 SqlCommand cmd = new SqlCommand(Buscar, conn);
                 lector = cmd.ExecuteReader();
                 tabla.Load(lector);
@@ -102,7 +104,7 @@ namespace CarrosCoppel
             {
                 conn = Conectar.CrearConexion();
                 conn.Open();
-                String cons = "SP_MTTOCARROS";
+                string cons = "SP_MTTOCARROS";
                 SqlCommand cmd = new SqlCommand(cons, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -144,11 +146,11 @@ namespace CarrosCoppel
             {
                 conn = Conectar.CrearConexion();
                 conn.Open();
-                string strComando = "DELETE FROM carros WHERE CarID ="+id ;
+                string strComando = "DELETE FROM carros WHERE CarID =" + id;
                 SqlCommand cmd = new SqlCommand(strComando, conn);
                 lector = cmd.ExecuteReader();
                 tabla.Load(lector);
-                
+
             }
             catch (Exception ex)
             {
@@ -165,7 +167,7 @@ namespace CarrosCoppel
 
         public static string ModificarCarro(carros car)
         {
-            
+
             SqlConnection conn = null;
             SqlDataReader lector = null;
 
@@ -174,7 +176,7 @@ namespace CarrosCoppel
             {
                 conn = Conectar.CrearConexion();
                 conn.Open();
-                String cons = "SP_MTTOCARROS";
+                string cons = "SP_MTTOCARROS";
                 SqlCommand cmd = new SqlCommand(cons, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -187,7 +189,7 @@ namespace CarrosCoppel
                 cmd.Parameters.AddWithValue("@CARMARCAID", car.CarMarcaID);
                 cmd.Parameters.AddWithValue("@CARTIPID", car.TipID);
                 cmd.Parameters.AddWithValue("@CARCOLORID", car.CarColorId);
-                cmd.ExecuteNonQuery();               
+                cmd.ExecuteNonQuery();
 
             }
             catch (Exception ex)
@@ -205,5 +207,5 @@ namespace CarrosCoppel
             return car.CarId;
         }
     }
-    
+
 }

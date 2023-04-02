@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace CarrosCoppel
+namespace CarrosCoppel.conexion
 {
     internal class Conectar
     {

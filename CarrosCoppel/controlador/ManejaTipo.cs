@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CarrosCoppel.conexion;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CarrosCoppel
+namespace CarrosCoppel.controlador
 {
-    internal class ManejaMarca
+    internal class ManejaTipo
     {
-        public static DataTable obtenMarca()
+        public static DataTable obtenTipo()
         {
             SqlConnection conn = null;
             SqlDataReader lector = null;
@@ -20,7 +16,7 @@ namespace CarrosCoppel
             {
                 conn = Conectar.CrearConexion();
                 conn.Open();
-                string strComando = "select CarMarcaID as 'ID Marca',CarMarca as 'Nombre Marca' from marca";
+                string strComando = "select CarTipID as 'ID Tipo',CarTip as 'Tipo ' from tipo";
                 SqlCommand cmd = new SqlCommand(strComando, conn);
                 lector = cmd.ExecuteReader();
                 tabla.Load(lector);

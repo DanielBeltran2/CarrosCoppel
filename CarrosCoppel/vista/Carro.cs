@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarrosCoppel.controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,6 @@ namespace CarrosCoppel
         {
             InitializeComponent();
         }
-
         private void Carros_Load(object sender, EventArgs e)
         {
             CargarTabla();
@@ -67,32 +67,26 @@ namespace CarrosCoppel
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }   
-
         private void txtIdCar_TextChanged(object sender, EventArgs e)
         {
             Buscar();
         }
-
         private void txtModCar_TextChanged(object sender, EventArgs e)
         {
             Buscar();
         }
-
         private void CbMarCar_SelectedIndexChanged(object sender, EventArgs e)
         {
             Buscar();
         }
-
         private void txtAñoCar_TextChanged(object sender, EventArgs e)
         {
             Buscar();
         }
-
         private void CbColCar_SelectedIndexChanged(object sender, EventArgs e)
         {
             Buscar();
         }
-
         private void CbTipCar_SelectedIndexChanged(object sender, EventArgs e)
         {
             Buscar();
@@ -114,14 +108,11 @@ namespace CarrosCoppel
             CbTipCar.SelectedIndex = -1;
         }
         private void Buscar()
-        {
-            
-            String datos = "";
-                       
+        {            
+            String datos = "";                     
             if (!string.IsNullOrEmpty(txtIdCar.Text))
             {
                 datos = datos + " c.CarID like '%" + txtIdCar.Text + "%'";
-
             }
             if (!string.IsNullOrEmpty(txtModCar.Text))
             {
@@ -133,9 +124,7 @@ namespace CarrosCoppel
                 {
                     datos = datos + "and c.CarMod like '%" + txtModCar.Text + "%'";
                 }               
-
             }          
-
             if (!string.IsNullOrEmpty(CbMarCar.Text))
             {
                 if (datos.Equals(""))
@@ -145,8 +134,7 @@ namespace CarrosCoppel
                 else
                 {
                     datos = datos + "and m.CarMarca like '%" + CbMarCar.Text + "%'";
-                }                
-              
+                }                        
             }
             if (!string.IsNullOrEmpty(txtAñoCar.Text))
             {
@@ -158,7 +146,6 @@ namespace CarrosCoppel
                 {
                     datos = datos + "and c.CarAño like '%" + txtAñoCar.Text + "%'";
                 }                           
-
             }
             if (!string.IsNullOrEmpty(CbTipCar.Text))
             {
@@ -169,8 +156,7 @@ namespace CarrosCoppel
                 else
                 {
                     datos = datos + "and t.CarTip like '%" + CbTipCar.Text + "%'";
-                }
-                
+                }               
             }
             if (!string.IsNullOrEmpty(CbColCar.Text))
             {
@@ -181,27 +167,22 @@ namespace CarrosCoppel
                 else
                 {
                     datos = datos + "and co.CarColor like '%" + CbColCar.Text + "%'";
-                }                
-
+                }             
             }
             if (string.IsNullOrEmpty(txtIdCar.Text) && string.IsNullOrEmpty(txtModCar.Text) && string.IsNullOrEmpty(CbMarCar.Text)&& string.IsNullOrEmpty(txtAñoCar.Text) && string.IsNullOrEmpty(CbTipCar.Text) && string.IsNullOrEmpty(CbColCar.Text))
             {
-
+                CargarTabla();
             }
             else
             {
-
                 String consultaFinal = "SELECT c.CarID AS 'Carro ID', c.CarMod AS 'Modelo', c.CarAño AS 'Año', m.CarMarca AS 'Marca', t.CarTip AS 'Tipo', co.CarColor AS 'Color' FROM carros c JOIN color co ON c.CarColorID = co.CarColorID JOIN marca m ON c.CarMarcaID = m.CarMarcaID JOIN tipo t ON c.CarTipID = t.CarTipID where " + datos;
                 Console.WriteLine(consultaFinal);
                 DataTable data = ManejaCarros.Buscar(consultaFinal);
                 this.dataGridView1.DataSource = data;
                 this.dataGridView1.Columns.GetLastColumn(DataGridViewElementStates.None, DataGridViewElementStates.None).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 this.dataGridView1.AutoResizeRows();
-            }
-
-            
+            }            
         }
-
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             CargarTabla();
