@@ -50,5 +50,11 @@ namespace CarrosCoppel
             Carro VerCar = new Carro();
             VerCar.Show();
         }
+
+        private void btnBorrarCar_Click(object sender, EventArgs e)
+        {
+            BorrarCarro borcar = new BorrarCarro();
+            borcar.Show();  
+        }
     }
 }

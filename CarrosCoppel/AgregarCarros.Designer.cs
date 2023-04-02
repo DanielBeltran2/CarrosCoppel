@@ -130,27 +130,33 @@
             // 
             // CbMarCar
             // 
+            this.CbMarCar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbMarCar.FormattingEnabled = true;
             this.CbMarCar.Location = new System.Drawing.Point(103, 117);
             this.CbMarCar.Name = "CbMarCar";
             this.CbMarCar.Size = new System.Drawing.Size(121, 23);
             this.CbMarCar.TabIndex = 12;
+            this.CbMarCar.SelectedIndexChanged += new System.EventHandler(this.CbMarCar_SelectedIndexChanged);
             // 
             // CbColCar
             // 
+            this.CbColCar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbColCar.FormattingEnabled = true;
             this.CbColCar.Location = new System.Drawing.Point(103, 175);
             this.CbColCar.Name = "CbColCar";
             this.CbColCar.Size = new System.Drawing.Size(121, 23);
             this.CbColCar.TabIndex = 13;
+            this.CbColCar.SelectedIndexChanged += new System.EventHandler(this.CbColCar_SelectedIndexChanged);
             // 
             // CbTipCar
             // 
+            this.CbTipCar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbTipCar.FormattingEnabled = true;
             this.CbTipCar.Location = new System.Drawing.Point(103, 204);
             this.CbTipCar.Name = "CbTipCar";
             this.CbTipCar.Size = new System.Drawing.Size(121, 23);
             this.CbTipCar.TabIndex = 14;
+            this.CbTipCar.SelectedIndexChanged += new System.EventHandler(this.CbTipCar_SelectedIndexChanged);
             // 
             // btnGuardar
             // 

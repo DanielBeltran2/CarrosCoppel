@@ -33,21 +33,22 @@
             this.btnVerTip = new System.Windows.Forms.Button();
             this.btnVerCol = new System.Windows.Forms.Button();
             this.btnAgMod = new System.Windows.Forms.Button();
+            this.btnBorrarCar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVerCar
             // 
-            this.btnVerCar.Location = new System.Drawing.Point(22, 21);
+            this.btnVerCar.Location = new System.Drawing.Point(22, 129);
             this.btnVerCar.Name = "btnVerCar";
             this.btnVerCar.Size = new System.Drawing.Size(196, 23);
             this.btnVerCar.TabIndex = 0;
-            this.btnVerCar.Text = "Ver Carros";
+            this.btnVerCar.Text = "Buscar Carros";
             this.btnVerCar.UseVisualStyleBackColor = true;
             this.btnVerCar.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnVerMar
             // 
-            this.btnVerMar.Location = new System.Drawing.Point(22, 50);
+            this.btnVerMar.Location = new System.Drawing.Point(22, 13);
             this.btnVerMar.Name = "btnVerMar";
             this.btnVerMar.Size = new System.Drawing.Size(196, 23);
             this.btnVerMar.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             // btnVerTip
             // 
-            this.btnVerTip.Location = new System.Drawing.Point(22, 79);
+            this.btnVerTip.Location = new System.Drawing.Point(22, 42);
             this.btnVerTip.Name = "btnVerTip";
             this.btnVerTip.Size = new System.Drawing.Size(196, 23);
             this.btnVerTip.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // btnVerCol
             // 
-            this.btnVerCol.Location = new System.Drawing.Point(22, 108);
+            this.btnVerCol.Location = new System.Drawing.Point(22, 71);
             this.btnVerCol.Name = "btnVerCol";
             this.btnVerCol.Size = new System.Drawing.Size(196, 23);
             this.btnVerCol.TabIndex = 3;
@@ -77,7 +78,7 @@
             // 
             // btnAgMod
             // 
-            this.btnAgMod.Location = new System.Drawing.Point(22, 137);
+            this.btnAgMod.Location = new System.Drawing.Point(22, 100);
             this.btnAgMod.Name = "btnAgMod";
             this.btnAgMod.Size = new System.Drawing.Size(196, 23);
             this.btnAgMod.TabIndex = 4;
@@ -85,11 +86,22 @@
             this.btnAgMod.UseVisualStyleBackColor = true;
             this.btnAgMod.Click += new System.EventHandler(this.button5_Click);
             // 
+            // btnBorrarCar
+            // 
+            this.btnBorrarCar.Location = new System.Drawing.Point(22, 158);
+            this.btnBorrarCar.Name = "btnBorrarCar";
+            this.btnBorrarCar.Size = new System.Drawing.Size(196, 23);
+            this.btnBorrarCar.TabIndex = 5;
+            this.btnBorrarCar.Text = "Borrar Carro";
+            this.btnBorrarCar.UseVisualStyleBackColor = true;
+            this.btnBorrarCar.Click += new System.EventHandler(this.btnBorrarCar_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 195);
+            this.ClientSize = new System.Drawing.Size(240, 210);
+            this.Controls.Add(this.btnBorrarCar);
             this.Controls.Add(this.btnAgMod);
             this.Controls.Add(this.btnVerCol);
             this.Controls.Add(this.btnVerTip);
@@ -109,5 +121,6 @@
         private Button btnVerTip;
         private Button btnVerCol;
         private Button btnAgMod;
+        private Button btnBorrarCar;
     }
 }

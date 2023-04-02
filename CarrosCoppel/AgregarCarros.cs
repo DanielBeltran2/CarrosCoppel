@@ -229,6 +229,20 @@ namespace CarrosCoppel
                 return;
             }
         }
-               
+
+        private void CbTipCar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CbMarCar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CbColCar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
